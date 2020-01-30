@@ -1,35 +1,77 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class MethodExercises {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        ArrayList<Character> letters = new ArrayList<Character>();
-      //prompt the user for 2 numbers
-       /*
-        System.out.println("Pleaase enter whole number: ");
+        //prompt the user for 2 numbers
+        //System.out.println(add());
+
+        //divide the two numbers
+        //System.out.println("The result is: "+ divide());
+
+        //Get the length of a string.
+        //System.out.printf("The length is: %d ",  length1());
+
+        // sort characters
+       // System.out.println(sortLetters());
+
+        //Get the average of 3 numbers.
+        //System.out.printf("The average is: %d", average());
+
+        // Leap year
+        //System.out.println("Is this year leap? " + leap());
+
+        //System.out.println(sentence("The dog jumped over the fence"));
+
+        //Calculate the area of a rectangle with length and width input from the user.
+        //System.out.println("The area is: " + area());
+
+
+
+        System.out.println("The number is " + oddOrEven());
+
+    }
+
+    public static int add(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Pleaase enter a whole number: ");
         int number1 = sc.nextInt();
         System.out.println("Please enter another number: ");
         int number2 = sc.nextInt();
+        return  number1 + number2;
+    }
+
+    public static int divide(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Pleaase enter a whole number: ");
+        int number1 = sc.nextInt();
         System.out.println("Please enter another number: ");
-        int number3 = sc.nextInt();
-        */
+        int number2 = sc.nextInt();
+        if(number2 == 0) {
+            try {
+                number1 = 30 / number2;
+                System.out.println(number2);
+            } catch (Exception e) {
+                System.out.println("udefined");
+            }
 
+        }
+        return  number1 / number2;
+    }
 
-        //add the two numbers
-      //  System.out.println("The sum = " + add(number1,number2));
-       // System.out.println("The result is: "+ divide(number1, number2));
-      /*
-        //Get the length of a string.
+    public static int length1(){
+        Scanner sc = new Scanner(System.in);
         System.out.println("Please enter a word: ");
         String word = sc.nextLine();
-        System.out.printf("The length of " +word+ " is: %d ",  length1(word));
-     */
+        return  word.length();
+    }
 
-
-        /*
-
+    public static ArrayList<Character> sortLetters(){
+        ArrayList<Character> letters = new ArrayList<Character>();
+        Scanner sc = new Scanner(System.in);
         System.out.println("Please enter 5 letters: ");
         letters.add(sc.next().charAt(0));
         letters.add(sc.next().charAt(0));
@@ -37,63 +79,26 @@ public class MethodExercises {
         letters.add(sc.next().charAt(0));
         letters.add(sc.next().charAt(0));
         Collections.sort(letters);
-        System.out.println(letters);
-         */
+          return letters;
+    }
 
-        //Get the average of 3 numbers.
-       // System.out.printf("The average is: %d", average(number1,number2,number3));
+    public static int average(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Pleaase enter a whole number: ");
+        int number1 = sc.nextInt();
+        System.out.println("Please enter another number: ");
+        int number2 = sc.nextInt();
+        System.out.println("Please enter another number: ");
+        int number3 = sc.nextInt();
+        return (number1 + number2 + number3)/3;
+    }
 
-        /*
+
+    public static boolean leap(){
+        Scanner sc = new Scanner(System.in);
         System.out.println("Please enter a year: ");
         int inputYear = sc.nextInt();
-        System.out.println("Is this year leap? " + leap(inputYear));
-       */
-
-      //  System.out.println(sentence("The dog jumped over the fence"));
-
-        /*
-        //Calculate the area of a rectangle with length and width input from the user.
-        System.out.println("Pleease enter the length: ");
-        double length = sc.nextDouble();
-        System.out.println("Please enter the width: ");
-        double width = sc.nextDouble();
-        System.out.println("The area is: " + area(length,width));
-       */
-        /*
-        System.out.println("Please enter a bound number: " );
-        int userNumber = sc.nextInt();
-        System.out.println(userNumber + " " + oddOrEven(userNumber));
-        */
-    }
-
-    public static int add(int num1,int num2){
-        return  num1 + num2;
-    }
-
-    public static int divide(int num1,int num2){
-        if(num2 == 0) {
-            try {
-                num1 = 30 / num2;
-                System.out.println(num2);
-            } catch (Exception e) {
-                System.out.println("udefined");
-            }
-
-        }
-        return  num1 / num2;
-    }
-
-    public static int length1(String input){
-        return input.length();
-    }
-
-    public static int average(int num1,int num2,int num3){
-        return (num1 + num2 + num3)/3;
-    }
-
-
-    public static boolean leap(int year){
-        return year % 4 == 0;
+        return inputYear % 4 == 0;
     }
 
     public static int sentence(String input){
@@ -101,16 +106,22 @@ public class MethodExercises {
         return input1.length;
     }
 
-    public static double area(double l, double w){
-        return l * w;
+    public static double area(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Pleease enter the length: ");
+        double length = sc.nextDouble();
+        System.out.println("Please enter the width: ");
+        double width = sc.nextDouble();
+        return length * width;
     }
 
-   public static String oddOrEven(int number){
+   public static String oddOrEven(){
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Please enter a bound number: " );
+       int number = sc.nextInt();
         if(number % 2 == 0){
             return "is even";
         }
        return "is odd";
    }
-
-
 }
